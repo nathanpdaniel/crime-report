@@ -1,7 +1,7 @@
-import Hello from '../components/Hello';
+import Main from '../../components/Main';
 import { connect, Dispatch } from 'react-redux';
-import { EnthusiasmActions } from '../actions/';
-import { RootState } from '../reducers';
+import { EnthusiasmActions } from '../../actions/';
+import { RootState } from '../../reducers';
 
 export function mapStateToProps(state: RootState) {
   return {
@@ -17,4 +17,4 @@ export function mapDispatchToProps(dispatch: Dispatch<EnthusiasmActions.Enthusia
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hello);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

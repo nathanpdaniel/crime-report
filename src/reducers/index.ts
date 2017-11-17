@@ -1,16 +1,19 @@
-import CombineReducers from './combineReducers';
+import { combineReducers } from 'redux';
 
-const appReducer = CombineReducers({
-  // list of reducers in here.
+import { enthusiasm, State as EnthusiasmState } from './enthusiasm';
+
+interface StoreEnhancerState { }
+
+export interface RootState extends StoreEnhancerState {
+  enthusiasm: EnthusiasmState;
+}
+
+export interface RootAction {
+  type: string;
+}
+
+const rootReducer = combineReducers<RootState>({
+  enthusiasm,
 });
-
-const rootReducer = (state:any, action:any) => {
-  if (action.type === `user/USER_LOGOUT`) {
-      delete state.auth.profile;
-      delete state.user;
-      delete state.locations;
-  }
-  return appReducer(state, action);
-};
 
 export default rootReducer;

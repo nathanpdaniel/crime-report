@@ -3,7 +3,7 @@ import './App.css';
 
 const logo = require('./logo.svg');
 
-class App extends PureComponent {
+class App extends React.PureComponent {
   render() {
     return (
       <div className="App">
