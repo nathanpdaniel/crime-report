@@ -1,21 +1,12 @@
 import { FETCH_NATIONAL_DATA, RECEIVE_NATIONAL_DATA } from '../constants';
+import { BaseState, BaseAction } from '../types';
 
-export type State = {
-  data?: {};
-  fetching?: boolean;
-};
-
-export type Action = {
-  type: string;
-  payload?: object;
-};
-
-export function data(state: State = { data: {} }, action: Action): State {
+export function data(state: BaseState = {}, action: BaseAction): BaseState {
   switch (action.type) {
     case FETCH_NATIONAL_DATA:
       return { ...state, fetching: true };
     case RECEIVE_NATIONAL_DATA:
-      return { ...state, fetching: false, data: action.payload };
+      return { ...state, fetching: false, ...action.payload };
     default:
       return state;
   }

@@ -1,9 +1,9 @@
 import Main from '../../components/Main';
 import { connect, Dispatch } from 'react-redux';
+import { State } from '../../reducers';
 import { DataActions } from '../../actions/';
-import { RootState } from '../../reducers';
 
-function mapStateToProps(state: RootState) {
+function mapStateToProps(state: State) {
   return {
     data: state.data,
   };
@@ -11,7 +11,7 @@ function mapStateToProps(state: RootState) {
 
 function mapDispatchToProps(dispatch: Dispatch<DataActions.DataAction>) {
   return {
-    getNationalData: () => dispatch(DataActions.getNationalData()),
+    getNationalEstimates: () => dispatch(DataActions.getNationalEstimates()),
   };
 }
 

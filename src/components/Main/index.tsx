@@ -1,16 +1,22 @@
 import * as React from 'react';
+import { INationalEstimateResponse } from '../../model/index';
+import { DataAction } from '../../actions/DataActions';
 
-interface Props extends React.Props<Main> {
-  data?: {};
-  getNationalData: () => void;
+interface Props {
+  data: INationalEstimateResponse;
+  getNationalEstimates: () => DataAction;
 }
 
-class Main extends React.Component<Props, {}> {
+class Main extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
   }
-  render() {
-    return (<div>MAIN</div>);
+  componentDidMount() {
+    this.props.getNationalEstimates();
+  }
+  public render() {
+    console.log(this.props.data);
+    return (<div>HELLO</div>);
   }
 }
 

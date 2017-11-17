@@ -1,4 +1,9 @@
-export interface StoreState {
-  languageName: string;
-  enthusiasmLevel: number;
-}
+export type BaseState = {
+  data?: {};
+  fetching?: boolean;
+};
+
+export type BaseAction = {
+  type: string;
+  payload: object;
+};
