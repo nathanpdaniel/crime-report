@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import { enthusiasm, State as EnthusiasmState } from './enthusiasm';
+import { data, State as AppDataState } from './data';
 
 interface StoreEnhancerState { }
 
 export interface RootState extends StoreEnhancerState {
-  enthusiasm: EnthusiasmState;
+  data: AppDataState;
 }
 
 export interface RootAction {
@@ -13,7 +13,7 @@ export interface RootAction {
 }
 
 const rootReducer = combineReducers<RootState>({
-  enthusiasm,
+  data,
 });
 
 export default rootReducer;

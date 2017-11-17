@@ -1,3 +1,3 @@
-import * as EnthusiasmActions from './EnthusiasmActions';
+import * as DataActions from './DataActions';
 
-export { EnthusiasmActions };
+export { DataActions };

@@ -1,14 +1,17 @@
 import * as React from 'react';
 
-interface Props {
-  name: string;
-  enthusiasmLevel: number;
-  onIncrement?: () => void;
-  onDecrement?: () => void;
+interface Props extends React.Props<Main> {
+  data?: {};
+  getNationalData: () => void;
 }
 
-function Main({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
-  return (<div>MAIN</div>);
+class Main extends React.Component<Props, {}> {
+  constructor(props: Props) {
+    super(props);
+  }
+  render() {
+    return (<div>MAIN</div>);
+  }
 }
 
 export default Main;

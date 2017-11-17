@@ -1,19 +1,17 @@
 import Main from '../../components/Main';
 import { connect, Dispatch } from 'react-redux';
-import { EnthusiasmActions } from '../../actions/';
+import { DataActions } from '../../actions/';
 import { RootState } from '../../reducers';
 
-export function mapStateToProps(state: RootState) {
+function mapStateToProps(state: RootState) {
   return {
-    enthusiasmLevel: state.enthusiasm.enthusiasmLevel,
-    name: state.enthusiasm.languageName,
+    data: state.data,
   };
 }
 
-export function mapDispatchToProps(dispatch: Dispatch<EnthusiasmActions.EnthusiasmAction>) {
+function mapDispatchToProps(dispatch: Dispatch<DataActions.DataAction>) {
   return {
-    onIncrement: () => dispatch(EnthusiasmActions.incrementEnthusiasm()),
-    onDecrement: () => dispatch(EnthusiasmActions.decrementEnthusiasm()),
+    getNationalData: () => dispatch(DataActions.getNationalData()),
   };
 }
 
