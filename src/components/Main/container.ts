@@ -1,4 +1,4 @@
-import Main from '../../components/Main';
+import Main from './template';
 import { connect, Dispatch } from 'react-redux';
 import { State } from '../../reducers';
 import { DataActions } from '../../actions/';
